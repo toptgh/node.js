@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>首页</h1>
+
+    <script src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/jquery/jquery-1.10.2.min_65682a2.js"></script>
+    <script>
+         $.ajax({
+            url:'/list',
+            data:{
+                username:'daming',
+                password:321
+            },
+            method:'GET',
+            success:function(data){
+                console.log('get:'+data);
+            },
+            fail:function(){
+                alert('失败');
+            }
+        })
+
+        $.ajax({
+            url:'/api/login',
+            method:'POST',
+            success:function(data){
+                console.log('post:'+data);
+            },
+            fail:function(){
+                alert('失败');
+            }
+        })
+
+        $.ajax({
+            url:'/api/v2/login',
+            data:{
+                username:'xiaoming',
+                password:123
+            },
+            method:'POST',
+            success:function(data){
+                console.log('post:'+data);
+            },
+            fail:function(){
+                alert('失败');
+            }
+        });
+    </script>
+</body>
+</html>
