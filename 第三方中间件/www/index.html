@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>首页</h1>
+
+
+    <script src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/jquery/jquery-1.10.2.min_65682a2.js"></script>
+    <script>
+        $.ajax({
+            url: '/v4/api/film/now-playing?__t=1540288515330&page=1&count=5',
+            methods: 'GET',
+            success: function(data){
+                console.log('请求成功');
+                console.log(data);
+            },
+            fail: function(){
+                console.log('请求失败');
+            }
+        })
+
+        $.ajax({
+            url: '/v4/api/film/coming-soon?__t=1540373903523&page=1&count=3',
+            methods: 'GET',
+            success: function(data){
+                console.log('请求成功');
+                console.log(data);
+            },
+            fail: function(){
+                console.log('请求失败');
+            }
+        })
+
+        $.ajax({
+            url: '/v4/api/cinema?__t=1540373942182',
+            methods: 'GET',
+            success: function(data){
+                console.log('请求成功');
+                console.log(data);
+            },
+            fail: function(){
+                console.log('请求失败');
+            }
+        })
+    
+    </script>
+</body>
+</html>
